@@ -1,0 +1,35 @@
+{
+  "generated_at_utc": "2026-03-28T07:19:51.288837+00:00",
+  "model_name": "whisper-small-finetuned",
+  "dominant_error_type": "substitution",
+  "summary": {
+    "before_wer": 0.307692,
+    "after_wer": 0.307692,
+    "delta": 0.0,
+    "changed_predictions": 0,
+    "num_predictions": 3
+  },
+  "predictions": [
+    {
+      "row_index": 0,
+      "reference": "मैंने दो किताबें खरीदीं",
+      "prediction_before": "मैंने 2 किताबें खरीदी",
+      "prediction_after": "मैंने 2 किताबें खरीदी",
+      "changed": false
+    },
+    {
+      "row_index": 1,
+      "reference": "मेरा इंटरव्यू बहुत अच्छा गया",
+      "prediction_before": "मेरा interview बहुत अच्छा गया",
+      "prediction_after": "मेरा interview बहुत अच्छा गया",
+      "changed": false
+    },
+    {
+      "row_index": 2,
+      "reference": "वो जल्दी घर गया",
+      "prediction_before": "वो घर गया",
+      "prediction_after": "वो घर गया",
+      "changed": false
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+predictions_path: outputs/evaluation/predictions.json
+reference_key: reference
+prediction_key: prediction
+model_name: whisper-small-finetuned
+
+sampling:
+  worst_n: 25
+  random_n: 10
+  random_seed: 42
+
+output:
+  output_path: outputs/analysis/error_analysis.json

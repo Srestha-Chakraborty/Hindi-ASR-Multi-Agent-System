@@ -1,19 +1,20 @@
 from typing import Dict, List, TypedDict
 
-from jiwer import wer
 from langgraph.graph import END, START, StateGraph
 
 from asr_multiagent.tools.lattice_builder import (
     build_lattice_for_utterance,
     comparison_rows,
+    leave_one_out_lattice_score,
     lattice_wer_for_model,
+    standard_wer,
 )
 
 
 class Q4State(TypedDict, total=False):
     model_transcriptions: List[dict]
     human_reference: List[str]
-    lattice: List[List[List[str]]]
+    lattice: List[dict]
     lattice_wer_results: Dict[str, float]
     standard_wer_results: Dict[str, float]
     comparison_table: List[dict]
@@ -41,7 +42,7 @@ def build_lattice_node(state: Q4State) -> Q4State:
     lattice = []
     for i, ref in enumerate(state["human_reference"]):
         hyps = [m["transcripts"][i] for m in state["model_transcriptions"]]
-        lattice.append(build_lattice_for_utterance(ref, hyps))
+        lattice.append(build_lattice_for_utterance(ref, hyps).to_serializable())
     state["lattice"] = lattice
     return state
 
@@ -49,12 +50,19 @@ def build_lattice_node(state: Q4State) -> Q4State:
 def compute_lattice_wer_node(state: Q4State) -> Q4State:
     standard, lattice_scores = {}, {}
     refs = state["human_reference"]
+    utterance_model_hypotheses = [
+        {
+            model["model_name"]: model["transcripts"][utterance_idx]
+            for model in state["model_transcriptions"]
+        }
+        for utterance_idx in range(len(refs))
+    ]
     for m in state["model_transcriptions"]:
         name, hyps = m["model_name"], m["transcripts"]
-        standard[name] = float(wer(refs, hyps))
+        standard[name] = standard_wer(refs, hyps)
         lw = []
         for i, h in enumerate(hyps):
-            lw.append(lattice_wer_for_model(refs[i], h, state["lattice"][i]))
+            lw.append(leave_one_out_lattice_score(refs[i], name, utterance_model_hypotheses[i]))
         lattice_scores[name] = sum(lw) / max(1, len(lw))
     state["standard_wer_results"] = standard
     state["lattice_wer_results"] = lattice_scores

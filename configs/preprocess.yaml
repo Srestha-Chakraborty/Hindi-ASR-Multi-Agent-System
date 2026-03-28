@@ -1,0 +1,21 @@
+# Parallel download + 16 kHz mono WAV + Unicode-normalized transcripts
+manifest_path: data/sample_manifest.json
+output_dir: data/processed
+num_workers: 4
+log_level: INFO
+
+download:
+  max_retries: 5
+  timeout_sec: 60.0
+  backoff_sec: 2.0
+
+audio:
+  target_sample_rate: 16000
+  min_duration_sec: 1.0
+  max_duration_sec: 30.0
+
+filters:
+  languages:
+    - hi
+    - hindi
+    - hi_in

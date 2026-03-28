@@ -1,4 +1,4 @@
-"""Backward-compatible exports for lattice-aware WER utilities."""
+"""Lattice construction and lattice-aware WER."""
 
 from lattice.lattice_wer import (
     WordLattice,

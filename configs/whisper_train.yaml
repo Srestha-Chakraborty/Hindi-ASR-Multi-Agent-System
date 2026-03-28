@@ -1,0 +1,39 @@
+# Whisper-small Hindi fine-tuning (Seq2SeqTrainer, resumable)
+model_name_or_path: openai/whisper-small
+language: hi
+task: transcribe
+
+dataset:
+  path: data/processed/hf_dataset
+  train_split: train
+  eval_split: test
+
+output:
+  root: outputs/whisper_training
+  checkpoints_subdir: checkpoints
+  final_model_subdir: final_model
+
+training:
+  num_train_epochs: 3
+  per_device_train_batch_size: 8
+  per_device_eval_batch_size: 8
+  gradient_accumulation_steps: 2
+  learning_rate: 1.0e-5
+  warmup_steps: 100
+  logging_steps: 20
+  max_steps: -1
+  eval_strategy: steps
+  eval_steps: 100
+  save_strategy: steps
+  save_steps: 100
+  save_total_limit: 3
+  load_best_model_at_end: false
+  metric_for_best_model: wer
+  greater_is_better: false
+  fp16: auto
+  bf16: false
+  gradient_checkpointing: false
+  seed: 42
+  dataloader_num_workers: 0
+  predict_with_generate: true
+  generation_max_length: 225

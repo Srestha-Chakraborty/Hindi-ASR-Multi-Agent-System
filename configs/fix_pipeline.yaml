@@ -1,0 +1,29 @@
+predictions_path: outputs/evaluation/predictions.json
+error_analysis_path: outputs/analysis/error_analysis.json
+model_name: whisper-small-finetuned
+output_path: outputs/analysis/before_vs_after.json
+cleanup_config_path: configs/post_processing.yaml
+
+rules:
+  substitution_map:
+    हॉस्पिटल: अस्पताल
+    स्कूल: विद्यालय
+    बिज़नेस: व्यवसाय
+    लाइब्रेरी: पुस्तकालय
+    बुक्स: किताबें
+    स्पीच: भाषण
+    पीएम: प्रधानमंत्री
+    प्रॉब्लम: समस्या
+    मोबाइल: फोन
+    रुपए: रुपये
+    यहां: यहाँ
+    हु: हूँ
+    हे: है
+  deletion_suffix_candidates:
+    - है
+    - हैं
+  filler_words:
+    - अ
+    - अह
+    - उह
+    - मतलब

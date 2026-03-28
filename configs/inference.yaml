@@ -1,0 +1,11 @@
+model_name_or_path: openai/whisper-small
+language: hi
+task: transcribe
+cache_dir: outputs/cache/inference
+cleanup_config_path: configs/post_processing.yaml
+error_analysis_path: outputs/analysis/error_analysis.json
+enable_cache: true
+enable_cleanup: true
+enable_error_aware_postprocessing: true
+compute_confidence: true
+device: auto

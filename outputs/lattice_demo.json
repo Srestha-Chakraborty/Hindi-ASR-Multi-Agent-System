@@ -1,0 +1,182 @@
+{
+  "references": [
+    "यह वाक्य संख्या 1 है",
+    "यह वाक्य संख्या 2 है",
+    "उसने दो किताबें खरीदीं"
+  ],
+  "models": {
+    "baseline": [
+      "यह वाक्य नंबर 1 है",
+      "यह वाक्य संख्या 2",
+      "उसने 2 किताबें खरीदी"
+    ],
+    "candidate": [
+      "यह वाक्य संख्या 1 है",
+      "यह वाक्य संख्या 2 है",
+      "उसने दो किताबें खरीदीं"
+    ],
+    "alt_model": [
+      "यह वाक्य 1 है",
+      "यह वाक्य नंबर 2 है",
+      "उसने दो पुस्तकें खरीदीं"
+    ]
+  },
+  "lattices": [
+    [
+      {
+        "slot_type": "reference",
+        "reference_index": 0,
+        "alternatives": [
+          "यह"
+        ],
+        "optional": false
+      },
+      {
+        "slot_type": "reference",
+        "reference_index": 1,
+        "alternatives": [
+          "वाक्य"
+        ],
+        "optional": false
+      },
+      {
+        "slot_type": "reference",
+        "reference_index": 2,
+        "alternatives": [
+          "नंबर",
+          "संख्या"
+        ],
+        "optional": true
+      },
+      {
+        "slot_type": "reference",
+        "reference_index": 3,
+        "alternatives": [
+          "1"
+        ],
+        "optional": false
+      },
+      {
+        "slot_type": "reference",
+        "reference_index": 4,
+        "alternatives": [
+          "है"
+        ],
+        "optional": false
+      }
+    ],
+    [
+      {
+        "slot_type": "reference",
+        "reference_index": 0,
+        "alternatives": [
+          "यह"
+        ],
+        "optional": false
+      },
+      {
+        "slot_type": "reference",
+        "reference_index": 1,
+        "alternatives": [
+          "वाक्य"
+        ],
+        "optional": false
+      },
+      {
+        "slot_type": "reference",
+        "reference_index": 2,
+        "alternatives": [
+          "नंबर",
+          "संख्या"
+        ],
+        "optional": false
+      },
+      {
+        "slot_type": "reference",
+        "reference_index": 3,
+        "alternatives": [
+          "2"
+        ],
+        "optional": false
+      },
+      {
+        "slot_type": "reference",
+        "reference_index": 4,
+        "alternatives": [
+          "है"
+        ],
+        "optional": true
+      }
+    ],
+    [
+      {
+        "slot_type": "reference",
+        "reference_index": 0,
+        "alternatives": [
+          "उसने"
+        ],
+        "optional": false
+      },
+      {
+        "slot_type": "reference",
+        "reference_index": 1,
+        "alternatives": [
+          "2",
+          "दो"
+        ],
+        "optional": false
+      },
+      {
+        "slot_type": "reference",
+        "reference_index": 2,
+        "alternatives": [
+          "किताबें",
+          "पुस्तकें"
+        ],
+        "optional": false
+      },
+      {
+        "slot_type": "reference",
+        "reference_index": 3,
+        "alternatives": [
+          "खरीदी",
+          "खरीदीं"
+        ],
+        "optional": false
+      }
+    ]
+  ],
+  "standard_scores": {
+    "baseline": 0.2857142857142857,
+    "candidate": 0.0,
+    "alt_model": 0.21428571428571427
+  },
+  "lattice_scores": {
+    "baseline": 0.0,
+    "candidate": 0.0,
+    "alt_model": 0.0
+  },
+  "comparison_table": [
+    {
+      "model": "baseline",
+      "standard_WER": 0.2857,
+      "lattice_WER": 0.0,
+      "delta": 0.2857,
+      "improved": true
+    },
+    {
+      "model": "candidate",
+      "standard_WER": 0.0,
+      "lattice_WER": 0.0,
+      "delta": 0.0,
+      "improved": false
+    },
+    {
+      "model": "alt_model",
+      "standard_WER": 0.2143,
+      "lattice_WER": 0.0,
+      "delta": 0.2143,
+      "improved": true
+    }
+  ]
+}

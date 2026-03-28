@@ -1,0 +1,48 @@
+idioms:
+  - दो-चार
+  - चार चाँद
+  - सात समंदर
+  - तीन तेरह
+  - दो टूक
+  - चार सौ बीस
+  - एक दो
+  - दो चार
+  - सात खून माफ
+  - नौ दो ग्यारह
+  - तीन पाँच
+
+known_english_words:
+  - interview
+  - job
+  - computer
+  - mobile
+  - video
+  - office
+  - train
+  - bus
+  - ticket
+  - form
+  - update
+  - download
+  - class
+  - school
+  - college
+  - manager
+  - इंटरव्यू
+  - जॉब
+  - कंप्यूटर
+  - मोबाइल
+  - वीडियो
+  - ऑफिस
+  - ट्रेन
+  - बस
+  - टिकट
+  - फॉर्म
+  - अपडेट
+  - डाउनलोड
+  - क्लास
+  - स्कूल
+  - कॉलेज
+  - मैनेजर
+
+tag_format: "[EN]{token}[/EN]"

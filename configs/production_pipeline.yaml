@@ -1,0 +1,27 @@
+training:
+  enabled: false
+  config_path: configs/whisper_train.yaml
+  dry_run: true
+
+evaluation:
+  enabled: false
+  config_path: configs/evaluation.yaml
+  existing_predictions_path: outputs/evaluation/predictions.json
+  existing_results_path: outputs/evaluation/results.json
+
+cleanup:
+  enabled: true
+  config_path: configs/post_processing.yaml
+  output_path: outputs/cleanup/cleaned_predictions.json
+
+error_analysis:
+  enabled: true
+  config_path: configs/error_analysis.yaml
+  predictions_path_override: true
+
+feedback:
+  enabled: true
+  config_path: configs/fix_pipeline.yaml
+  use_latest_artifacts: true
+
+output_path: outputs/production_pipeline.json

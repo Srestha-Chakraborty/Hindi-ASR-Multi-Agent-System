@@ -1,0 +1,26 @@
+dataset:
+  source: google/fleurs
+  config_name: hi_in
+  split: test
+  text_column: transcription
+  audio_column: audio
+  local_path:
+  max_samples: 25
+
+models:
+  - name: whisper-small-base
+    path: openai/whisper-small
+  - name: whisper-small-finetuned
+    path: outputs/whisper_training/final_model
+
+output:
+  output_dir: outputs/evaluation
+  results_filename: results.json
+  predictions_filename: predictions.json
+  include_predictions: true
+
+runtime:
+  batch_size: 1
+  device: -1
+  compute_cer: true
+  local_files_only: false

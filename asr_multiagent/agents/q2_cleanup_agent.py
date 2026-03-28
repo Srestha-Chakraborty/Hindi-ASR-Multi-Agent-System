@@ -9,9 +9,8 @@ from asr_multiagent.tools.data_loader import (
     sanitize_hindi_text,
     transcription_url_for_entry,
 )
-from asr_multiagent.tools.english_detector import tag_english_words
-from asr_multiagent.tools.number_normalizer import normalize_numbers_in_text
 from asr_multiagent.tools.whisper_tool import build_asr_pipeline
+from post_processing.cleanup import CleanupConfig, clean_text, load_config, normalize_numbers
 
 
 class Q2State(TypedDict, total=False):
@@ -28,7 +27,11 @@ IDIOM_PHRASES = [
     "सात खून माफ", "नौ दो ग्यारह", "तीन पाँच",
 ]
 
-IDIOM_NUMBER_WORDS = {"दो", "तीन", "चार", "पाँच", "सात", "नौ"}
+def _cleanup_config() -> CleanupConfig:
+    from pathlib import Path
+
+    config_path = Path("configs/post_processing.yaml")
+    return load_config(config_path) if config_path.exists() else CleanupConfig()
 
 
 def generate_raw_asr_node(state: Q2State) -> Q2State:
@@ -55,12 +58,14 @@ def generate_raw_asr_node(state: Q2State) -> Q2State:
 
 
 def number_normalization_node(state: Q2State) -> Q2State:
+    cleanup_config = _cleanup_config()
     out = []
     correct_examples = []
     edge_case_examples = []
 
     for row in state["raw_asr_transcripts"]:
-        norm, reasons = normalize_numbers_in_text(row["raw_asr"])
+        norm, metadata = normalize_numbers(row["raw_asr"], cleanup_config, return_metadata=True)
+        reasons = [f"{item['source']}->{item['normalized']}" for item in metadata]
         rec = {**row, "normalized": norm, "reasons": reasons}
         out.append(rec)
 
@@ -97,7 +102,7 @@ def number_normalization_node(state: Q2State) -> Q2State:
                 {
                     "recording_id": "synthetic_example_1",
                     "raw": "उसने दो-चार बातें कहीं",
-                    "normalized": normalize_numbers_in_text("उसने दो-चार बातें कहीं")[0],
+                    "normalized": normalize_numbers("उसने दो-चार बातें कहीं", cleanup_config),
                     "edge_case_phrase": "दो-चार",
                     "reasoning": (
                         "'दो-चार' is a compound idiom meaning 'a few'. "
@@ -108,7 +113,7 @@ def number_normalization_node(state: Q2State) -> Q2State:
                 {
                     "recording_id": "synthetic_example_2",
                     "raw": "वो नौ दो ग्यारह हो गया",
-                    "normalized": normalize_numbers_in_text("वो नौ दो ग्यारह हो गया")[0],
+                    "normalized": normalize_numbers("वो नौ दो ग्यारह हो गया", cleanup_config),
                     "edge_case_phrase": "नौ दो ग्यारह",
                     "reasoning": (
                         "'नौ दो ग्यारह होना' is an idiom meaning 'to flee/run away'. "
@@ -119,7 +124,7 @@ def number_normalization_node(state: Q2State) -> Q2State:
                 {
                     "recording_id": "synthetic_example_3",
                     "raw": "उसने चार सौ बीस किया",
-                    "normalized": normalize_numbers_in_text("उसने चार सौ बीस किया")[0],
+                    "normalized": normalize_numbers("उसने चार सौ बीस किया", cleanup_config),
                     "edge_case_phrase": "चार सौ बीस",
                     "reasoning": (
                         "'चार सौ बीस करना' (420) means to cheat/swindle — it's a cultural idiom "
@@ -139,9 +144,18 @@ def number_normalization_node(state: Q2State) -> Q2State:
 
 
 def english_detection_node(state: Q2State) -> Q2State:
+    cleanup_config = _cleanup_config()
     tagged = []
     for row in state["normalized_transcripts"]:
-        tagged.append({**row, "tagged_text": tag_english_words(row["normalized"])})
+        cleaned = clean_text(row["raw_asr"], cleanup_config, return_metadata=True)
+        tagged.append(
+            {
+                **row,
+                "normalized": cleaned["normalized_text"],
+                "tagged_text": cleaned["cleaned_text"],
+                "english_words": cleaned["english_words"],
+            }
+        )
     state["english_tagged_transcripts"] = tagged
     return state
 

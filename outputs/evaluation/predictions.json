@@ -1,0 +1,19 @@
+{
+  "whisper-small-finetuned": [
+    {
+      "row_index": 0,
+      "reference": "मैंने दो किताबें खरीदीं",
+      "prediction": "मैंने 2 किताबें खरीदी"
+    },
+    {
+      "row_index": 1,
+      "reference": "मेरा इंटरव्यू बहुत अच्छा गया",
+      "prediction": "मेरा interview बहुत अच्छा गया"
+    },
+    {
+      "row_index": 2,
+      "reference": "वो जल्दी घर गया",
+      "prediction": "वो घर गया"
+    }
+  ]
+}

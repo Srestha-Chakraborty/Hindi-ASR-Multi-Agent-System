@@ -1,0 +1,204 @@
+{
+  "generated_at_utc": "2026-03-28T07:19:51.281601+00:00",
+  "input_predictions_path": "/Users/soumyadip/Desktop/Hindi ASR Multi-Agent System/outputs/evaluation/predictions.json",
+  "model_name": "whisper-small-finetuned",
+  "num_rows": 3,
+  "summary": {
+    "operation_counts": {
+      "substitution": 3,
+      "deletion": 1,
+      "insertion": 0
+    },
+    "category_counts": {
+      "substitute": 3,
+      "number_error": 1,
+      "english_code_mix_error": 1,
+      "delete": 1
+    }
+  },
+  "samples": {
+    "worst_errors": [
+      {
+        "row_index": 0,
+        "reference": "मैंने दो किताबें खरीदीं",
+        "prediction": "मैंने 2 किताबें खरीदी",
+        "wer": 0.5,
+        "total_errors": 2,
+        "substitutions": 2,
+        "deletions": 0,
+        "insertions": 0,
+        "categories": {
+          "substitute": 2,
+          "number_error": 1
+        },
+        "errors": [
+          {
+            "operation": "substitute",
+            "reference_token": "दो",
+            "hypothesis_token": "2",
+            "reference_index": 1,
+            "hypothesis_index": 1,
+            "categories": [
+              "substitute",
+              "number_error"
+            ]
+          },
+          {
+            "operation": "substitute",
+            "reference_token": "खरीदीं",
+            "hypothesis_token": "खरीदी",
+            "reference_index": 3,
+            "hypothesis_index": 3,
+            "categories": [
+              "substitute"
+            ]
+          }
+        ]
+      },
+      {
+        "row_index": 2,
+        "reference": "वो जल्दी घर गया",
+        "prediction": "वो घर गया",
+        "wer": 0.25,
+        "total_errors": 1,
+        "substitutions": 0,
+        "deletions": 1,
+        "insertions": 0,
+        "categories": {
+          "delete": 1
+        },
+        "errors": [
+          {
+            "operation": "delete",
+            "reference_token": "जल्दी",
+            "hypothesis_token": "",
+            "reference_index": 1,
+            "hypothesis_index": 1,
+            "categories": [
+              "delete"
+            ]
+          }
+        ]
+      },
+      {
+        "row_index": 1,
+        "reference": "मेरा इंटरव्यू बहुत अच्छा गया",
+        "prediction": "मेरा interview बहुत अच्छा गया",
+        "wer": 0.2,
+        "total_errors": 1,
+        "substitutions": 1,
+        "deletions": 0,
+        "insertions": 0,
+        "categories": {
+          "substitute": 1,
+          "english_code_mix_error": 1
+        },
+        "errors": [
+          {
+            "operation": "substitute",
+            "reference_token": "इंटरव्यू",
+            "hypothesis_token": "interview",
+            "reference_index": 1,
+            "hypothesis_index": 1,
+            "categories": [
+              "substitute",
+              "english_code_mix_error"
+            ]
+          }
+        ]
+      }
+    ],
+    "random_samples": []
+  },
+  "utterances": [
+    {
+      "row_index": 0,
+      "reference": "मैंने दो किताबें खरीदीं",
+      "prediction": "मैंने 2 किताबें खरीदी",
+      "wer": 0.5,
+      "total_errors": 2,
+      "substitutions": 2,
+      "deletions": 0,
+      "insertions": 0,
+      "categories": {
+        "substitute": 2,
+        "number_error": 1
+      },
+      "errors": [
+        {
+          "operation": "substitute",
+          "reference_token": "दो",
+          "hypothesis_token": "2",
+          "reference_index": 1,
+          "hypothesis_index": 1,
+          "categories": [
+            "substitute",
+            "number_error"
+          ]
+        },
+        {
+          "operation": "substitute",
+          "reference_token": "खरीदीं",
+          "hypothesis_token": "खरीदी",
+          "reference_index": 3,
+          "hypothesis_index": 3,
+          "categories": [
+            "substitute"
+          ]
+        }
+      ]
+    },
+    {
+      "row_index": 1,
+      "reference": "मेरा इंटरव्यू बहुत अच्छा गया",
+      "prediction": "मेरा interview बहुत अच्छा गया",
+      "wer": 0.2,
+      "total_errors": 1,
+      "substitutions": 1,
+      "deletions": 0,
+      "insertions": 0,
+      "categories": {
+        "substitute": 1,
+        "english_code_mix_error": 1
+      },
+      "errors": [
+        {
+          "operation": "substitute",
+          "reference_token": "इंटरव्यू",
+          "hypothesis_token": "interview",
+          "reference_index": 1,
+          "hypothesis_index": 1,
+          "categories": [
+            "substitute",
+            "english_code_mix_error"
+          ]
+        }
+      ]
+    },
+    {
+      "row_index": 2,
+      "reference": "वो जल्दी घर गया",
+      "prediction": "वो घर गया",
+      "wer": 0.25,
+      "total_errors": 1,
+      "substitutions": 0,
+      "deletions": 1,
+      "insertions": 0,
+      "categories": {
+        "delete": 1
+      },
+      "errors": [
+        {
+          "operation": "delete",
+          "reference_token": "जल्दी",
+          "hypothesis_token": "",
+          "reference_index": 1,
+          "hypothesis_index": 1,
+          "categories": [
+            "delete"
+          ]
+        }
+      ]
+    }
+  ]
+}

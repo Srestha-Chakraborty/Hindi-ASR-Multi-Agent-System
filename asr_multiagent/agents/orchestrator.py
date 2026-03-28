@@ -6,6 +6,7 @@ from typing import Any, Dict, List, TypedDict
 from langgraph.graph import END, START, StateGraph
 
 from asr_multiagent.agents import q1_asr_agent, q2_cleanup_agent, q3_spelling_agent, q4_lattice_agent
+from asr_multiagent.agents.production_agents import build_production_graph, run_production_pipeline
 
 
 class SupervisorState(TypedDict, total=False):
@@ -127,3 +128,11 @@ def run_suite(selected_questions: List[str], manifest_path: str, demo_mode: bool
     with open("outputs/final_report.json", "w", encoding="utf-8") as f:
         json.dump(result["results"], f, ensure_ascii=False, indent=2, default=str)
     return result["results"]
+
+
+__all__ = [
+    "build_graph",
+    "run_suite",
+    "build_production_graph",
+    "run_production_pipeline",
+]

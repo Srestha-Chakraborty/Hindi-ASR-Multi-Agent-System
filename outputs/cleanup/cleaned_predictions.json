@@ -1,0 +1,33 @@
+{
+  "whisper-small-finetuned": [
+    {
+      "row_index": 0,
+      "reference": "मैंने दो किताबें खरीदीं",
+      "prediction": "मैंने 2 किताबें खरीदी",
+      "normalized_prediction": "मैंने 2 किताबें खरीदी",
+      "cleaned_prediction": "मैंने 2 किताबें खरीदी",
+      "english_words": [],
+      "number_conversions": []
+    },
+    {
+      "row_index": 1,
+      "reference": "मेरा इंटरव्यू बहुत अच्छा गया",
+      "prediction": "मेरा interview बहुत अच्छा गया",
+      "normalized_prediction": "मेरा interview बहुत अच्छा गया",
+      "cleaned_prediction": "मेरा [EN]interview[/EN] बहुत अच्छा गया",
+      "english_words": [
+        "interview"
+      ],
+      "number_conversions": []
+    },
+    {
+      "row_index": 2,
+      "reference": "वो जल्दी घर गया",
+      "prediction": "वो घर गया",
+      "normalized_prediction": "वो घर गया",
+      "cleaned_prediction": "वो घर गया",
+      "english_words": [],
+      "number_conversions": []
+    }
+  ]
+}

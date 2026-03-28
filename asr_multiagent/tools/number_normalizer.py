@@ -1,60 +1,9 @@
-import re
-from typing import Dict, List, Tuple
+from typing import List, Tuple
 
-
-NUMBER_MAP: Dict[str, int] = {
-    "शून्य": 0, "एक": 1, "दो": 2, "तीन": 3, "चार": 4, "पांच": 5, "पाँच": 5, "छह": 6, "सात": 7, "आठ": 8, "नौ": 9,
-    "दस": 10, "ग्यारह": 11, "बारह": 12, "तेरह": 13, "चौदह": 14, "पंद्रह": 15, "पन्द्रह": 15, "सोलह": 16, "सत्रह": 17, "अठारह": 18, "उन्नीस": 19,
-    "बीस": 20, "इक्कीस": 21, "बाईस": 22, "तेइस": 23, "चौबीस": 24, "पच्चीस": 25, "छब्बीस": 26, "सत्ताईस": 27, "अट्ठाईस": 28, "उनतीस": 29,
-    "तीस": 30, "इकतीस": 31, "बत्तीस": 32, "तैंतीस": 33, "चौंतीस": 34, "पैंतीस": 35, "छत्तीस": 36, "सैंतीस": 37, "अड़तीस": 38, "उनतालीस": 39,
-    "चालीस": 40, "इकतालीस": 41, "बयालीस": 42, "तैंतालीस": 43, "चवालीस": 44, "पैंतालीस": 45,
-    "छियालीस": 46, "सैंतालीस": 47, "अड़तालीस": 48, "उनचास": 49,
-    "पचास": 50, "साठ": 60, "सत्तर": 70, "अस्सी": 80, "नब्बे": 90,
-    "इक्यावन": 51, "बावन": 52, "तिरपन": 53, "चौवन": 54, "पचपन": 55, "छप्पन": 56, "सत्तावन": 57, "अट्ठावन": 58, "उनसठ": 59,
-    "इकसठ": 61, "बासठ": 62, "तिरसठ": 63, "चौंसठ": 64, "पैंसठ": 65, "छियासठ": 66, "सड़सठ": 67, "अड़सठ": 68, "उनहत्तर": 69,
-    "इकहत्तर": 71, "बहत्तर": 72, "तिहत्तर": 73, "चौहत्तर": 74, "पचहत्तर": 75, "छिहत्तर": 76, "सतहत्तर": 77, "अठहत्तर": 78, "उन्यासी": 79,
-    "इक्यासी": 81, "बयासी": 82, "तिरासी": 83, "चौरासी": 84, "पचासी": 85, "छियासी": 86, "सत्तासी": 87, "अट्ठासी": 88, "नवासी": 89,
-    "इक्यानवे": 91, "बानवे": 92, "तिरानवे": 93, "चौरानवे": 94, "पचानवे": 95, "छियानवे": 96, "सत्तानवे": 97, "अट्ठानवे": 98, "निन्यानवे": 99,
-}
-SCALES = {"सौ": 100, "हज़ार": 1000, "हजार": 1000, "लाख": 100000, "करोड़": 10000000}
-IDIOMS = {"दो-चार", "चार चाँद", "सात समंदर", "तीन तेरह"}
-
-
-def _is_idiom_context(tokens: List[str], idx: int) -> bool:
-    tok = tokens[idx]
-    if "-" in tok:
-        return True
-    span2 = " ".join(tokens[idx: idx + 2])
-    return span2 in IDIOMS
+from post_processing.cleanup import CleanupConfig, normalize_numbers
 
 
 def normalize_numbers_in_text(text: str) -> Tuple[str, List[str]]:
-    tokens = re.split(r"(\s+)", text)
-    words = [t for t in tokens if t.strip()]
-    reasons: List[str] = []
-    out = []
-    i = 0
-    while i < len(words):
-        w = words[i]
-        if _is_idiom_context(words, i):
-            out.append(w)
-            i += 1
-            continue
-        if w in NUMBER_MAP:
-            out.append(str(NUMBER_MAP[w]))
-            reasons.append(f"{w}->{NUMBER_MAP[w]}")
-            i += 1
-            continue
-        if w in SCALES:
-            prev = out[-1] if out and out[-1].isdigit() else "1"
-            val = int(prev) * SCALES[w]
-            if out and out[-1].isdigit():
-                out[-1] = str(val)
-            else:
-                out.append(str(val))
-            reasons.append(f"{prev}*{w}->{val}")
-            i += 1
-            continue
-        out.append(w)
-        i += 1
-    return " ".join(out), reasons
+    normalized, metadata = normalize_numbers(text, CleanupConfig(), return_metadata=True)
+    reasons = [f"{item['source']}->{item['normalized']}" for item in metadata]
+    return normalized, reasons

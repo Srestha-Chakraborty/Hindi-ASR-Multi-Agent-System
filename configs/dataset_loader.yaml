@@ -1,0 +1,6 @@
+# Build HF DatasetDict from preprocess output
+processed_manifest_path: data/processed/processed_manifest.json
+hf_dataset_output_dir: data/processed/hf_dataset
+target_sample_rate: 16000
+test_size: 0.1
+seed: 42
