@@ -1,0 +1,32 @@
+{
+  "manifest_path": "data/sample_manifest.json",
+  "raw_asr_transcripts": [],
+  "normalized_transcripts": [],
+  "english_tagged_transcripts": [],
+  "cleanup_examples": {
+    "correct_conversions": [],
+    "edge_cases": [
+      {
+        "recording_id": "synthetic_example_1",
+        "raw": "उसने दो-चार बातें कहीं",
+        "normalized": "उसने दो-चार बातें कहीं",
+        "edge_case_phrase": "दो-चार",
+        "reasoning": "'दो-चार' is a compound idiom meaning 'a few'. Converting to '2-4' changes it from an idiomatic expression to a numeric range. Hyphened number pairs are preserved as-is."
+      },
+      {
+        "recording_id": "synthetic_example_2",
+        "raw": "वो नौ दो ग्यारह हो गया",
+        "normalized": "वो 9 2 11 हो गया",
+        "edge_case_phrase": "नौ दो ग्यारह",
+        "reasoning": "'नौ दो ग्यारह होना' is an idiom meaning 'to flee/run away'. Converting to '9 2 11' loses the idiomatic meaning entirely. Context detection for known multi-word idioms prevents this."
+      },
+      {
+        "recording_id": "synthetic_example_3",
+        "raw": "उसने चार सौ बीस किया",
+        "normalized": "उसने 400 20 किया",
+        "edge_case_phrase": "चार सौ बीस",
+        "reasoning": "'चार सौ बीस करना' (420) means to cheat/swindle — it's a cultural idiom derived from IPC Section 420. While '420' conversion is technically correct, the phrase is used figuratively here, not as a literal amount."
+      }
+    ]
+  }
+}

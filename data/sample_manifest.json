@@ -1,0 +1,74 @@
+[
+  {
+    "user_id": "967179",
+    "recording_id": "825780",
+    "language": "hi",
+    "duration": 4.2,
+    "rec_url_gcp": "https://storage.googleapis.com/upload_goai/967179/825780.wav",
+    "transcription_url": "https://storage.googleapis.com/upload_goai/967179/825780_transcription.json",
+    "metadata_url": "https://storage.googleapis.com/upload_goai/967179/825780_metadata.json"
+  },
+  {
+    "user_id": "967179",
+    "recording_id": "825781",
+    "language": "hi",
+    "duration": 6.8,
+    "rec_url_gcp": "https://storage.googleapis.com/upload_goai/967179/825781.wav",
+    "transcription_url": "https://storage.googleapis.com/upload_goai/967179/825781_transcription.json",
+    "metadata_url": "https://storage.googleapis.com/upload_goai/967179/825781_metadata.json"
+  },
+  {
+    "user_id": "967180",
+    "recording_id": "825790",
+    "language": "hi",
+    "duration": 3.5,
+    "rec_url_gcp": "https://storage.googleapis.com/upload_goai/967180/825790.wav",
+    "transcription_url": "https://storage.googleapis.com/upload_goai/967180/825790_transcription.json",
+    "metadata_url": "https://storage.googleapis.com/upload_goai/967180/825790_metadata.json"
+  },
+  {
+    "user_id": "967180",
+    "recording_id": "825791",
+    "language": "hi",
+    "duration": 8.1,
+    "rec_url_gcp": "https://storage.googleapis.com/upload_goai/967180/825791.wav",
+    "transcription_url": "https://storage.googleapis.com/upload_goai/967180/825791_transcription.json",
+    "metadata_url": "https://storage.googleapis.com/upload_goai/967180/825791_metadata.json"
+  },
+  {
+    "user_id": "967181",
+    "recording_id": "825800",
+    "language": "hi",
+    "duration": 0.4,
+    "rec_url_gcp": "https://storage.googleapis.com/upload_goai/967181/825800.wav",
+    "transcription_url": "https://storage.googleapis.com/upload_goai/967181/825800_transcription.json",
+    "metadata_url": "https://storage.googleapis.com/upload_goai/967181/825800_metadata.json"
+  },
+  {
+    "user_id": "967181",
+    "recording_id": "825801",
+    "language": "en",
+    "duration": 5.0,
+    "rec_url_gcp": "https://storage.googleapis.com/upload_goai/967181/825801.wav",
+    "transcription_url": "https://storage.googleapis.com/upload_goai/967181/825801_transcription.json",
+    "metadata_url": "https://storage.googleapis.com/upload_goai/967181/825801_metadata.json"
+  },
+  {
+    "user_id": "967182",
+    "recording_id": "825810",
+    "language": "hi",
+    "duration": 12.3,
+    "rec_url_gcp": "https://storage.googleapis.com/upload_goai/967182/825810.wav",
+    "transcription_url": "https://storage.googleapis.com/upload_goai/967182/825810_transcription.json",
+    "metadata_url": "https://storage.googleapis.com/upload_goai/967182/825810_metadata.json"
+  },
+  {
+    "user_id": "967182",
+    "recording_id": "825811",
+    "language": "hi",
+    "duration": 5.5,
+    "rec_url_gcp": "https://storage.googleapis.com/upload_goai/967182/825811.wav",
+    "transcription_url": "https://storage.googleapis.com/upload_goai/967182/825811_transcription.json",
+    "metadata_url": "https://storage.googleapis.com/upload_goai/967182/825811_metadata.json"
+  }
+]

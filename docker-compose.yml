@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  asr-suite:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./outputs:/app/outputs
+      - ./data:/app/data
+      - ./.cache:/app/.cache
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - TRANSFORMERS_CACHE=/app/.cache/huggingface
+      - HF_HOME=/app/.cache/huggingface
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped

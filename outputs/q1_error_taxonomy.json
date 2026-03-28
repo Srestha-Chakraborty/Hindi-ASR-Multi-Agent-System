@@ -1,0 +1,102 @@
+{
+  "categories": [
+    {
+      "name": "Formal/Colloquial Substitution",
+      "description": "Model outputs colloquial Hindi words where reference uses formal equivalents",
+      "examples": [
+        {
+          "reference": "अस्पताल में भर्ती हैं वो",
+          "hypothesis": "हॉस्पिटल में भर्ती है वो",
+          "wer_score": 0.67,
+          "severity_bucket": "high_error",
+          "hypothesis_fixed": "हॉस्पिटल में भर्ती है वो"
+        },
+        {
+          "reference": "विद्यालय में आज छुट्टी है",
+          "hypothesis": "स्कूल में आज बंद है",
+          "wer_score": 0.67,
+          "severity_bucket": "high_error",
+          "hypothesis_fixed": "स्कूल में आज बंद है"
+        },
+        {
+          "reference": "उन्होंने अपना व्यवसाय शुरू किया",
+          "hypothesis": "उन्होंने बिज़नेस शुरू किया",
+          "wer_score": 0.5,
+          "severity_bucket": "high_error",
+          "hypothesis_fixed": "उन्होंने बिज़नेस शुरू किया"
+        }
+      ]
+    },
+    {
+      "name": "Vowel Sign Confusion",
+      "description": "Incorrect matra (vowel diacritic) causing similar-sounding word errors",
+      "examples": [
+        {
+          "reference": "यह एक परीक्षण वाक्य है",
+          "hypothesis": "यह एक परिक्षण वाक्य हैं",
+          "wer_score": 0.2,
+          "severity_bucket": "low_error",
+          "hypothesis_fixed": "यह एक परिक्षण वाक्य हैं"
+        },
+        {
+          "reference": "मुझे कंप्यूटर पर काम करना पसंद है",
+          "hypothesis": "मुझे कंप्यूटर पर काम करना पसंद हे",
+          "wer_score": 0.17,
+          "severity_bucket": "low_error",
+          "hypothesis_fixed": "मुझे कंप्यूटर पर काम करना पसंद हे"
+        },
+        {
+          "reference": "वह स्कूल जाता है हर रोज़",
+          "hypothesis": "वह स्कूल जाता है हर रोज",
+          "wer_score": 0.14,
+          "severity_bucket": "low_error",
+          "hypothesis_fixed": "वह स्कूल जाता है हर रोज"
+        }
+      ]
+    },
+    {
+      "name": "Word Boundary Errors",
+      "description": "Words merged or split incorrectly",
+      "examples": [
+        {
+          "reference": "मैं तीन साल से यहाँ रह रहा हूँ",
+          "hypothesis": "मैं तीन साल से यहां रह रहा हु",
+          "wer_score": 0.29,
+          "severity_bucket": "medium_error",
+          "hypothesis_fixed": "मैं तीन साल से यहां रह रहा हु"
+        },
+        {
+          "reference": "यह समस्या बहुत गंभीर है",
+          "hypothesis": "यह प्रॉब्लम काफी गंभीर है",
+          "wer_score": 0.5,
+          "severity_bucket": "medium_error",
+          "hypothesis_fixed": "यह प्रॉब्लम काफी गंभीर है"
+        },
+        {
+          "reference": "उन्होंने पाँच सौ रुपये दिए",
+          "hypothesis": "उन्होंने पांच सो रुपए दिए",
+          "wer_score": 0.5,
+          "severity_bucket": "medium_error",
+          "hypothesis_fixed": "उन्होंने पांच सो रुपए दिए"
+        }
+      ]
+    }
+  ],
+  "top_3_fixes": [
+    {
+      "error_type": "Formal/Colloquial Substitution",
+      "fix": "Add a post-processing synonym normalization layer using a Hindi formal-informal synonym dictionary",
+      "implementation_hint": "Build a dict mapping colloquial words to formal equivalents, apply after decoding"
+    },
+    {
+      "error_type": "Vowel Sign Confusion",
+      "fix": "Apply Unicode NFC normalization and add matra-confusable pairs as data augmentation during training",
+      "implementation_hint": "Use unicodedata.normalize('NFC', text) on all training labels before tokenization"
+    },
+    {
+      "error_type": "Word Boundary Errors",
+      "fix": "Add a Sanskrit/Hindi sandhi-aware tokenizer as a pre/post-processing step",
+      "implementation_hint": "Use indic-nlp-library's tokenizer to re-segment merged words in the hypothesis"
+    }
+  ]
+}

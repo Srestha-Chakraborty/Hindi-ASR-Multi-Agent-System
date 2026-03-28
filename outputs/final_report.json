@@ -1,0 +1,1021 @@
+{
+  "q1": {
+    "manifest_path": "data/sample_manifest.json",
+    "demo_mode": true,
+    "preprocessed_dataset": {
+      "train": "Dataset({\n    features: [],\n    num_rows: 0\n})",
+      "test": "Dataset({\n    features: [],\n    num_rows: 0\n})"
+    },
+    "baseline_wer": 0.45,
+    "heldout_baseline_wer": 0.4,
+    "finetuned_wer": 0.37,
+    "heldout_finetuned_wer": 0.33,
+    "error_samples": [
+      {
+        "reference": "यह एक परीक्षण वाक्य है",
+        "hypothesis": "यह एक परिक्षण वाक्य हैं",
+        "wer_score": 0.2,
+        "severity_bucket": "low_error",
+        "hypothesis_fixed": "यह एक परिक्षण वाक्य हैं"
+      },
+      {
+        "reference": "मुझे कंप्यूटर पर काम करना पसंद है",
+        "hypothesis": "मुझे कंप्यूटर पर काम करना पसंद हे",
+        "wer_score": 0.17,
+        "severity_bucket": "low_error",
+        "hypothesis_fixed": "मुझे कंप्यूटर पर काम करना पसंद हे"
+      },
+      {
+        "reference": "वह स्कूल जाता है हर रोज़",
+        "hypothesis": "वह स्कूल जाता है हर रोज",
+        "wer_score": 0.14,
+        "severity_bucket": "low_error",
+        "hypothesis_fixed": "वह स्कूल जाता है हर रोज"
+      },
+      {
+        "reference": "आज मौसम बहुत अच्छा है",
+        "hypothesis": "आज मौसम बहुत अच्चा है",
+        "wer_score": 0.25,
+        "severity_bucket": "low_error",
+        "hypothesis_fixed": "आज मौसम बहुत अच्चा है"
+      },
+      {
+        "reference": "उसने चौदह किताबें खरीदीं",
+        "hypothesis": "उसने चौदह किताबे खरीदी",
+        "wer_score": 0.5,
+        "severity_bucket": "low_error",
+        "hypothesis_fixed": "उसने चौदह किताबे खरीदी"
+      },
+      {
+        "reference": "मेरा इंटरव्यू बहुत अच्छा गया",
+        "hypothesis": "मेरा इंटरव्यू काफी अच्छा गया",
+        "wer_score": 0.25,
+        "severity_bucket": "low_error",
+        "hypothesis_fixed": "मेरा इंटरव्यू काफी अच्छा गया"
+      },
+      {
+        "reference": "दिल्ली भारत की राजधानी है",
+        "hypothesis": "दिल्ली भारत का राजधानी है",
+        "wer_score": 0.25,
+        "severity_bucket": "low_error",
+        "hypothesis_fixed": "दिल्ली भारत का राजधानी है"
+      },
+      {
+        "reference": "हम कल मुंबई जाएंगे",
+        "hypothesis": "हम कल मुम्बई जाएंगे",
+        "wer_score": 0.25,
+        "severity_bucket": "low_error",
+        "hypothesis_fixed": "हम कल मुम्बई जाएंगे"
+      },
+      {
+        "reference": "बच्चे खेल रहे हैं पार्क में",
+        "hypothesis": "बच्चे खेल रहे है पार्क में",
+        "wer_score": 0.17,
+        "severity_bucket": "low_error",
+        "hypothesis_fixed": "बच्चे खेल रहे है पार्क में"
+      },
+      {
+        "reference": "उसका नाम राहुल है",
+        "hypothesis": "उसका नाम राहुल हैं",
+        "wer_score": 0.25,
+        "severity_bucket": "low_error",
+        "hypothesis_fixed": "उसका नाम राहुल हैं"
+      },
+      {
+        "reference": "मैं तीन साल से यहाँ रह रहा हूँ",
+        "hypothesis": "मैं तीन साल से यहां रह रहा हु",
+        "wer_score": 0.29,
+        "severity_bucket": "medium_error",
+        "hypothesis_fixed": "मैं तीन साल से यहां रह रहा हु"
+      },
+      {
+        "reference": "यह समस्या बहुत गंभीर है",
+        "hypothesis": "यह प्रॉब्लम काफी गंभीर है",
+        "wer_score": 0.5,
+        "severity_bucket": "medium_error",
+        "hypothesis_fixed": "यह प्रॉब्लम काफी गंभीर है"
+      },
+      {
+        "reference": "उन्होंने पाँच सौ रुपये दिए",
+        "hypothesis": "उन्होंने पांच सो रुपए दिए",
+        "wer_score": 0.5,
+        "severity_bucket": "medium_error",
+        "hypothesis_fixed": "उन्होंने पांच सो रुपए दिए"
+      },
+      {
+        "reference": "क्या आप मुझे रास्ता बता सकते हैं",
+        "hypothesis": "क्या आप मुझे रास्ता बतासकते हैं",
+        "wer_score": 0.14,
+        "severity_bucket": "medium_error",
+        "hypothesis_fixed": "क्या आप मुझे रास्ता बतासकते हैं"
+      },
+      {
+        "reference": "मेरी माँ खाना बना रही हैं",
+        "hypothesis": "मेरी माँ खाना बना रही है",
+        "wer_score": 0.17,
+        "severity_bucket": "medium_error",
+        "hypothesis_fixed": "मेरी माँ खाना बना रही है"
+      },
+      {
+        "reference": "सरकार ने नई नीति घोषित की",
+        "hypothesis": "सरकार ने नई नीति घोषत की",
+        "wer_score": 0.17,
+        "severity_bucket": "medium_error",
+        "hypothesis_fixed": "सरकार ने नई नीति घोषत की"
+      },
+      {
+        "reference": "इस साल परीक्षा बहुत कठिन थी",
+        "hypothesis": "इस साल परीक्षा काफी कठिन था",
+        "wer_score": 0.29,
+        "severity_bucket": "medium_error",
+        "hypothesis_fixed": "इस साल परीक्षा काफी कठिन था"
+      },
+      {
+        "reference": "दोनों भाई मिलकर काम करते हैं",
+        "hypothesis": "दोनों भाई काम करते हैं",
+        "wer_score": 0.29,
+        "severity_bucket": "medium_error",
+        "hypothesis_fixed": "दोनों भाई काम करते हैं"
+      },
+      {
+        "reference": "उसने पूरी कहानी सुनाई",
+        "hypothesis": "उसने पूरी कहानी बताई",
+        "wer_score": 0.25,
+        "severity_bucket": "medium_error",
+        "hypothesis_fixed": "उसने पूरी कहानी बताई"
+      },
+      {
+        "reference": "नया फोन खरीदना है मुझे",
+        "hypothesis": "नया मोबाइल लेना है मुझे",
+        "wer_score": 0.67,
+        "severity_bucket": "medium_error",
+        "hypothesis_fixed": "नया मोबाइल लेना है मुझे"
+      },
+      {
+        "reference": "अस्पताल में भर्ती हैं वो",
+        "hypothesis": "हॉस्पिटल में भर्ती है वो",
+        "wer_score": 0.67,
+        "severity_bucket": "high_error",
+        "hypothesis_fixed": "हॉस्पिटल में भर्ती है वो"
+      },
+      {
+        "reference": "विद्यालय में आज छुट्टी है",
+        "hypothesis": "स्कूल में आज बंद है",
+        "wer_score": 0.67,
+        "severity_bucket": "high_error",
+        "hypothesis_fixed": "स्कूल में आज बंद है"
+      },
+      {
+        "reference": "उन्होंने अपना व्यवसाय शुरू किया",
+        "hypothesis": "उन्होंने बिज़नेस शुरू किया",
+        "wer_score": 0.5,
+        "severity_bucket": "high_error",
+        "hypothesis_fixed": "उन्होंने बिज़नेस शुरू किया"
+      },
+      {
+        "reference": "पुस्तकालय में बहुत किताबें हैं",
+        "hypothesis": "लाइब्रेरी में कई बुक्स हैं",
+        "wer_score": 0.67,
+        "severity_bucket": "high_error",
+        "hypothesis_fixed": "लाइब्रेरी में कई बुक्स हैं"
+      },
+      {
+        "reference": "प्रधानमंत्री ने भाषण दिया",
+        "hypothesis": "पीएम ने स्पीच दी",
+        "wer_score": 1.0,
+        "severity_bucket": "high_error",
+        "hypothesis_fixed": "पीएम ने स्पीच दी"
+      }
+    ],
+    "error_taxonomy": {
+      "categories": [
+        {
+          "name": "Formal/Colloquial Substitution",
+          "description": "Model outputs colloquial Hindi words where reference uses formal equivalents",
+          "examples": [
+            {
+              "reference": "अस्पताल में भर्ती हैं वो",
+              "hypothesis": "हॉस्पिटल में भर्ती है वो",
+              "wer_score": 0.67,
+              "severity_bucket": "high_error",
+              "hypothesis_fixed": "हॉस्पिटल में भर्ती है वो"
+            },
+            {
+              "reference": "विद्यालय में आज छुट्टी है",
+              "hypothesis": "स्कूल में आज बंद है",
+              "wer_score": 0.67,
+              "severity_bucket": "high_error",
+              "hypothesis_fixed": "स्कूल में आज बंद है"
+            },
+            {
+              "reference": "उन्होंने अपना व्यवसाय शुरू किया",
+              "hypothesis": "उन्होंने बिज़नेस शुरू किया",
+              "wer_score": 0.5,
+              "severity_bucket": "high_error",
+              "hypothesis_fixed": "उन्होंने बिज़नेस शुरू किया"
+            }
+          ]
+        },
+        {
+          "name": "Vowel Sign Confusion",
+          "description": "Incorrect matra (vowel diacritic) causing similar-sounding word errors",
+          "examples": [
+            {
+              "reference": "यह एक परीक्षण वाक्य है",
+              "hypothesis": "यह एक परिक्षण वाक्य हैं",
+              "wer_score": 0.2,
+              "severity_bucket": "low_error",
+              "hypothesis_fixed": "यह एक परिक्षण वाक्य हैं"
+            },
+            {
+              "reference": "मुझे कंप्यूटर पर काम करना पसंद है",
+              "hypothesis": "मुझे कंप्यूटर पर काम करना पसंद हे",
+              "wer_score": 0.17,
+              "severity_bucket": "low_error",
+              "hypothesis_fixed": "मुझे कंप्यूटर पर काम करना पसंद हे"
+            },
+            {
+              "reference": "वह स्कूल जाता है हर रोज़",
+              "hypothesis": "वह स्कूल जाता है हर रोज",
+              "wer_score": 0.14,
+              "severity_bucket": "low_error",
+              "hypothesis_fixed": "वह स्कूल जाता है हर रोज"
+            }
+          ]
+        },
+        {
+          "name": "Word Boundary Errors",
+          "description": "Words merged or split incorrectly",
+          "examples": [
+            {
+              "reference": "मैं तीन साल से यहाँ रह रहा हूँ",
+              "hypothesis": "मैं तीन साल से यहां रह रहा हु",
+              "wer_score": 0.29,
+              "severity_bucket": "medium_error",
+              "hypothesis_fixed": "मैं तीन साल से यहां रह रहा हु"
+            },
+            {
+              "reference": "यह समस्या बहुत गंभीर है",
+              "hypothesis": "यह प्रॉब्लम काफी गंभीर है",
+              "wer_score": 0.5,
+              "severity_bucket": "medium_error",
+              "hypothesis_fixed": "यह प्रॉब्लम काफी गंभीर है"
+            },
+            {
+              "reference": "उन्होंने पाँच सौ रुपये दिए",
+              "hypothesis": "उन्होंने पांच सो रुपए दिए",
+              "wer_score": 0.5,
+              "severity_bucket": "medium_error",
+              "hypothesis_fixed": "उन्होंने पांच सो रुपए दिए"
+            }
+          ]
+        }
+      ],
+      "top_3_fixes": [
+        {
+          "error_type": "Formal/Colloquial Substitution",
+          "fix": "Add a post-processing synonym normalization layer using a Hindi formal-informal synonym dictionary",
+          "implementation_hint": "Build a dict mapping colloquial words to formal equivalents, apply after decoding"
+        },
+        {
+          "error_type": "Vowel Sign Confusion",
+          "fix": "Apply Unicode NFC normalization and add matra-confusable pairs as data augmentation during training",
+          "implementation_hint": "Use unicodedata.normalize('NFC', text) on all training labels before tokenization"
+        },
+        {
+          "error_type": "Word Boundary Errors",
+          "fix": "Add a Sanskrit/Hindi sandhi-aware tokenizer as a pre/post-processing step",
+          "implementation_hint": "Use indic-nlp-library's tokenizer to re-segment merged words in the hypothesis"
+        }
+      ]
+    },
+    "fix_proposals": [
+      {
+        "error_type": "Formal/Colloquial Substitution",
+        "fix": "Add a post-processing synonym normalization layer using a Hindi formal-informal synonym dictionary",
+        "implementation_hint": "Build a dict mapping colloquial words to formal equivalents, apply after decoding"
+      },
+      {
+        "error_type": "Vowel Sign Confusion",
+        "fix": "Apply Unicode NFC normalization and add matra-confusable pairs as data augmentation during training",
+        "implementation_hint": "Use unicodedata.normalize('NFC', text) on all training labels before tokenization"
+      },
+      {
+        "error_type": "Word Boundary Errors",
+        "fix": "Add a Sanskrit/Hindi sandhi-aware tokenizer as a pre/post-processing step",
+        "implementation_hint": "Use indic-nlp-library's tokenizer to re-segment merged words in the hypothesis"
+      }
+    ],
+    "fix_results": {
+      "implemented_fix": "Unicode NFC normalization on hypothesis and reference strings",
+      "fix_rationale": "Devanagari text can represent the same visual character using multiple Unicode byte sequences (e.g., anusvara as composed NFC vs decomposed NFD). Whisper sometimes outputs NFD while references are NFC, causing WER penalties that are not real transcription errors.",
+      "subset_size": 25,
+      "before_subset_wer": 0.3083,
+      "after_subset_wer": 0.3083,
+      "absolute_improvement": 0.0,
+      "relative_improvement_pct": 0.0
+    }
+  },
+  "q2": {
+    "manifest_path": "data/sample_manifest.json",
+    "raw_asr_transcripts": [],
+    "normalized_transcripts": [],
+    "english_tagged_transcripts": [],
+    "cleanup_examples": {
+      "correct_conversions": [],
+      "edge_cases": [
+        {
+          "recording_id": "synthetic_example_1",
+          "raw": "उसने दो-चार बातें कहीं",
+          "normalized": "उसने दो-चार बातें कहीं",
+          "edge_case_phrase": "दो-चार",
+          "reasoning": "'दो-चार' is a compound idiom meaning 'a few'. Converting to '2-4' changes it from an idiomatic expression to a numeric range. Hyphened number pairs are preserved as-is."
+        },
+        {
+          "recording_id": "synthetic_example_2",
+          "raw": "वो नौ दो ग्यारह हो गया",
+          "normalized": "वो 9 2 11 हो गया",
+          "edge_case_phrase": "नौ दो ग्यारह",
+          "reasoning": "'नौ दो ग्यारह होना' is an idiom meaning 'to flee/run away'. Converting to '9 2 11' loses the idiomatic meaning entirely. Context detection for known multi-word idioms prevents this."
+        },
+        {
+          "recording_id": "synthetic_example_3",
+          "raw": "उसने चार सौ बीस किया",
+          "normalized": "उसने 400 20 किया",
+          "edge_case_phrase": "चार सौ बीस",
+          "reasoning": "'चार सौ बीस करना' (420) means to cheat/swindle — it's a cultural idiom derived from IPC Section 420. While '420' conversion is technically correct, the phrase is used figuratively here, not as a literal amount."
+        }
+      ]
+    }
+  },
+  "q3": {
+    "manifest_path": "data/sample_manifest.json",
+    "unique_words": [
+      "इंटरव्यू",
+      "कंप्यूटर",
+      "दो-चार",
+      "नमस्ते",
+      "परिक्षण",
+      "विद्यालय"
+    ],
+    "classified_words": [
+      {
+        "word": "इंटरव्यू",
+        "label": "correct_spelling",
+        "confidence": "LOW",
+        "reason": "English loanword"
+      },
+      {
+        "word": "कंप्यूटर",
+        "label": "correct_spelling",
+        "confidence": "LOW",
+        "reason": "English loanword"
+      },
+      {
+        "word": "दो-चार",
+        "confidence": "HIGH",
+        "reason": "non_devanagari_chars",
+        "label": "incorrect_spelling"
+      },
+      {
+        "word": "नमस्ते",
+        "label": "correct_spelling",
+        "confidence": "LOW",
+        "reason": "common Hindi greeting"
+      },
+      {
+        "word": "परिक्षण",
+        "label": "incorrect_spelling",
+        "confidence": "LOW",
+        "reason": "correct spelling is परीक्षण"
+      },
+      {
+        "word": "विद्यालय",
+        "label": "correct_spelling",
+        "confidence": "LOW",
+        "reason": "common Hindi word"
+      }
+    ],
+    "low_confidence_review": [
+      {
+        "total_reviewed": 5,
+        "agreements": 5,
+        "disagreements": 0,
+        "estimated_accuracy": 1.0,
+        "interpretation": "First pass agreed with second pass on 5/5 words (100.0%). Disagreements (0) indicate where the rule-based + LLM pipeline is unreliable, typically on proper nouns, dialectal forms, and loanwords.",
+        "comparison_details": [
+          {
+            "word": "इंटरव्यू",
+            "first_pass_label": "correct_spelling",
+            "first_pass_reason": "English loanword",
+            "second_pass_label": "correct_spelling",
+            "second_pass_reason": "English loanword in Devanagari",
+            "agreement": true
+          },
+          {
+            "word": "कंप्यूटर",
+            "first_pass_label": "correct_spelling",
+            "first_pass_reason": "English loanword",
+            "second_pass_label": "correct_spelling",
+            "second_pass_reason": "English loanword in Devanagari",
+            "agreement": true
+          },
+          {
+            "word": "नमस्ते",
+            "first_pass_label": "correct_spelling",
+            "first_pass_reason": "common Hindi greeting",
+            "second_pass_label": "correct_spelling",
+            "second_pass_reason": "standard Hindi greeting",
+            "agreement": true
+          },
+          {
+            "word": "परिक्षण",
+            "first_pass_label": "incorrect_spelling",
+            "first_pass_reason": "correct spelling is परीक्षण",
+            "second_pass_label": "incorrect_spelling",
+            "second_pass_reason": "correct spelling is परीक्षण",
+            "agreement": true
+          },
+          {
+            "word": "विद्यालय",
+            "first_pass_label": "correct_spelling",
+            "first_pass_reason": "common Hindi word",
+            "second_pass_label": "correct_spelling",
+            "second_pass_reason": "standard Hindi word for school",
+            "agreement": true
+          }
+        ]
+      }
+    ],
+    "unreliable_categories": [
+      "Based on the provided sample, the following categories can be identified as unreliable in Hindi spelling classification:\n\n```json\n[\n  {\n    \"category\": \"English loanwords\",\n    \"reason\": \"Words like इंटरव्यू and कंप्यूटर are labeled as correct spellings with low confidence, indicating uncertainty in their classification.\"\n  },\n  {\n    \"category\": \"Common Hindi words and greetings\",\n    \"reason\": \"Words like नमस्ते and विद्यालय are labeled as correct spellings with low confidence, suggesting that their common usage does not guarantee accurate spelling classification.\"\n  }\n]\n```\n\nThese categories are considered unreliable because the provided sample shows that even common Hindi words and English loanwords can have low confidence levels in their spelling classification, indicating potential inconsistencies or uncertainties in the classification process."
+    ],
+    "stats": {
+      "total": 6,
+      "correct": 4,
+      "incorrect": 2,
+      "confidence_breakdown": {
+        "LOW": 5,
+        "HIGH": 1
+      }
+    }
+  },
+  "q4": {
+    "model_transcriptions": [
+      {
+        "model_name": "model_1",
+        "transcripts": [
+          "यह वाक्य नंबर 1 है",
+          "यह वाक्य संख्या 2 है",
+          "यह वाक्य नंबर 3 है",
+          "यह वाक्य संख्या 4 है",
+          "यह वाक्य नंबर 5 है",
+          "यह वाक्य संख्या 6 है",
+          "यह वाक्य नंबर 7 है",
+          "यह वाक्य संख्या 8 ",
+          "यह वाक्य नंबर 9 है",
+          "यह वाक्य संख्या 10 है",
+          "यह वाक्य नंबर 11 है",
+          "यह वाक्य संख्या 12 है",
+          "यह वाक्य नंबर 13 है",
+          "यह वाक्य संख्या 14 है",
+          "यह वाक्य नंबर 15 है",
+          "यह वाक्य संख्या 16 है",
+          "यह वाक्य नंबर 17 है",
+          "यह वाक्य संख्या 18 है",
+          "यह वाक्य नंबर 19 है",
+          "यह वाक्य संख्या 20 है"
+        ]
+      },
+      {
+        "model_name": "model_2",
+        "transcripts": [
+          "यह वाक्य नंबर 1 है",
+          "यह वाक्य संख्या 2 है",
+          "यह वाक्य संख्या 3 है",
+          "यह वाक्य नंबर 4 है",
+          "यह वाक्य संख्या 5 है",
+          "यह वाक्य संख्या 6 है",
+          "यह वाक्य नंबर 7 है",
+          "यह वाक्य संख्या 8 ",
+          "यह वाक्य संख्या 9 है",
+          "यह वाक्य नंबर 10 है",
+          "यह वाक्य संख्या 11 है",
+          "यह वाक्य संख्या 12 है",
+          "यह वाक्य नंबर 13 है",
+          "यह वाक्य संख्या 14 है",
+          "यह वाक्य संख्या 15 ",
+          "यह वाक्य नंबर 16 है",
+          "यह वाक्य संख्या 17 है",
+          "यह वाक्य संख्या 18 है",
+          "यह वाक्य नंबर 19 है",
+          "यह वाक्य संख्या 20 है"
+        ]
+      },
+      {
+        "model_name": "model_3",
+        "transcripts": [
+          "यह वाक्य नंबर 1 है",
+          "यह वाक्य संख्या 2 है",
+          "यह वाक्य संख्या 3 है",
+          "यह वाक्य संख्या 4 है",
+          "यह वाक्य नंबर 5 है",
+          "यह वाक्य संख्या 6 है",
+          "यह वाक्य संख्या 7 है",
+          "यह वाक्य संख्या 8 ",
+          "यह वाक्य नंबर 9 है",
+          "यह वाक्य संख्या 10 है",
+          "यह वाक्य संख्या 11 है",
+          "यह वाक्य संख्या 12 है",
+          "यह वाक्य नंबर 13 है",
+          "यह वाक्य संख्या 14 है",
+          "यह वाक्य संख्या 15 ",
+          "यह वाक्य संख्या 16 है",
+          "यह वाक्य नंबर 17 है",
+          "यह वाक्य संख्या 18 है",
+          "यह वाक्य संख्या 19 है",
+          "यह वाक्य संख्या 20 है"
+        ]
+      },
+      {
+        "model_name": "model_4",
+        "transcripts": [
+          "यह वाक्य नंबर 1 है",
+          "यह वाक्य संख्या 2 है",
+          "यह वाक्य संख्या 3 है",
+          "यह वाक्य संख्या 4 है",
+          "यह वाक्य संख्या 5 है",
+          "यह वाक्य नंबर 6 है",
+          "यह वाक्य संख्या 7 है",
+          "यह वाक्य संख्या 8 ",
+          "यह वाक्य संख्या 9 है",
+          "यह वाक्य संख्या 10 है",
+          "यह वाक्य नंबर 11 है",
+          "यह वाक्य संख्या 12 है",
+          "यह वाक्य संख्या 13 है",
+          "यह वाक्य संख्या 14 है",
+          "यह वाक्य संख्या 15 ",
+          "यह वाक्य नंबर 16 है",
+          "यह वाक्य संख्या 17 है",
+          "यह वाक्य संख्या 18 है",
+          "यह वाक्य संख्या 19 है",
+          "यह वाक्य संख्या 20 है"
+        ]
+      },
+      {
+        "model_name": "model_5",
+        "transcripts": [
+          "यह वाक्य नंबर 1 है",
+          "यह वाक्य संख्या 2 है",
+          "यह वाक्य संख्या 3 है",
+          "यह वाक्य संख्या 4 है",
+          "यह वाक्य संख्या 5 है",
+          "यह वाक्य संख्या 6 है",
+          "यह वाक्य नंबर 7 है",
+          "यह वाक्य संख्या 8 ",
+          "यह वाक्य संख्या 9 है",
+          "यह वाक्य संख्या 10 है",
+          "यह वाक्य संख्या 11 है",
+          "यह वाक्य संख्या 12 है",
+          "यह वाक्य नंबर 13 है",
+          "यह वाक्य संख्या 14 है",
+          "यह वाक्य संख्या 15 ",
+          "यह वाक्य संख्या 16 है",
+          "यह वाक्य संख्या 17 है",
+          "यह वाक्य संख्या 18 है",
+          "यह वाक्य नंबर 19 है",
+          "यह वाक्य संख्या 20 है"
+        ]
+      }
+    ],
+    "human_reference": [
+      "यह वाक्य संख्या 1 है",
+      "यह वाक्य संख्या 2 है",
+      "यह वाक्य संख्या 3 है",
+      "यह वाक्य संख्या 4 है",
+      "यह वाक्य संख्या 5 है",
+      "यह वाक्य संख्या 6 है",
+      "यह वाक्य संख्या 7 है",
+      "यह वाक्य संख्या 8 है",
+      "यह वाक्य संख्या 9 है",
+      "यह वाक्य संख्या 10 है",
+      "यह वाक्य संख्या 11 है",
+      "यह वाक्य संख्या 12 है",
+      "यह वाक्य संख्या 13 है",
+      "यह वाक्य संख्या 14 है",
+      "यह वाक्य संख्या 15 है",
+      "यह वाक्य संख्या 16 है",
+      "यह वाक्य संख्या 17 है",
+      "यह वाक्य संख्या 18 है",
+      "यह वाक्य संख्या 19 है",
+      "यह वाक्य संख्या 20 है"
+    ],
+    "lattice": [
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "1"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "संख्या"
+        ],
+        [
+          "2"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "3"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "4"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "5"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "6"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "7"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "संख्या"
+        ],
+        [
+          "8"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "9"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "10"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "11"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "संख्या"
+        ],
+        [
+          "12"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "13"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "संख्या"
+        ],
+        [
+          "14"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "15"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "16"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "17"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "संख्या"
+        ],
+        [
+          "18"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "नंबर",
+          "संख्या"
+        ],
+        [
+          "19"
+        ],
+        [
+          "है"
+        ]
+      ],
+      [
+        [
+          "यह"
+        ],
+        [
+          "वाक्य"
+        ],
+        [
+          "संख्या"
+        ],
+        [
+          "20"
+        ],
+        [
+          "है"
+        ]
+      ]
+    ],
+    "lattice_wer_results": {
+      "model_1": 0.01,
+      "model_2": 0.02,
+      "model_3": 0.02,
+      "model_4": 0.02,
+      "model_5": 0.02
+    },
+    "standard_wer_results": {
+      "model_1": 0.11,
+      "model_2": 0.09,
+      "model_3": 0.07,
+      "model_4": 0.06,
+      "model_5": 0.06
+    },
+    "comparison_table": [
+      {
+        "model": "model_1",
+        "standard_WER": 0.11,
+        "lattice_WER": 0.01,
+        "delta": 0.1,
+        "improved": true
+      },
+      {
+        "model": "model_2",
+        "standard_WER": 0.09,
+        "lattice_WER": 0.02,
+        "delta": 0.07,
+        "improved": true
+      },
+      {
+        "model": "model_3",
+        "standard_WER": 0.07,
+        "lattice_WER": 0.02,
+        "delta": 0.05,
+        "improved": true
+      },
+      {
+        "model": "model_4",
+        "standard_WER": 0.06,
+        "lattice_WER": 0.02,
+        "delta": 0.04,
+        "improved": true
+      },
+      {
+        "model": "model_5",
+        "standard_WER": 0.06,
+        "lattice_WER": 0.02,
+        "delta": 0.04,
+        "improved": true
+      }
+    ]
+  }
+}

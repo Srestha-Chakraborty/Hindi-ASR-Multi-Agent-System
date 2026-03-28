@@ -1,0 +1,6 @@
+model,standard_WER,lattice_WER,delta,improved
+model_1,0.11,0.01,0.1,True
+model_2,0.09,0.02,0.07,True
+model_3,0.07,0.02,0.05,True
+model_4,0.06,0.02,0.04,True
+model_5,0.06,0.02,0.04,True

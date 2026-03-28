@@ -1,0 +1,7 @@
+word,label,confidence,reason
+इंटरव्यू,correct_spelling,LOW,English loanword
+कंप्यूटर,correct_spelling,LOW,English loanword
+दो-चार,incorrect_spelling,HIGH,non_devanagari_chars
+नमस्ते,correct_spelling,LOW,common Hindi greeting
+परिक्षण,incorrect_spelling,LOW,correct spelling is परीक्षण
+विद्यालय,correct_spelling,LOW,common Hindi word
